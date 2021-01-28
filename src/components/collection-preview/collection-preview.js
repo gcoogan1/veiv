@@ -10,11 +10,9 @@ const CollectionPreview = ({ title, items }) => {
       <h1 className="title">{title.toUpperCase()}</h1>
       <div className="preview">
         {items
-          .filter((i, idx) => idx < 4)      //filters through to make sure collection preview ONLY shows 4 items per collection item(hats..etc)
-          .map((
-            {id, ...otherItemProps}
-          ) => (
-            <CollectionItem key={id} {...otherItemProps} />
+          .filter((item, idx) => idx < 4)      //filters through to make sure collection preview ONLY shows 4 items per collection item(hats..etc)
+          .map(item => (
+            <CollectionItem key={item.id} item={item} />
           ))}
       </div>
     </div>
